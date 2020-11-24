@@ -23,7 +23,7 @@ namespace DataLayer.Models
 
         public override string ToString()
         {
-            return $"{Id} - {Name} - {IndexNumber} - {AvgMark}";
+            return $"{Id} {Name} {IndexNumber} {AvgMark}";
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BussinessLayer;
+using DataLayer.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +17,14 @@ namespace PresentationLayer
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            StudentBussiness sb = new StudentBussiness();
+            List<Student> studentList = sb.GetStudents();
+            foreach (Student s in studentList)
+                listBox1.Items.Add(s.ToString());
         }
     }
 }
