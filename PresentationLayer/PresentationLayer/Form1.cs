@@ -25,6 +25,28 @@ namespace PresentationLayer
             List<Student> studentList = sb.GetStudents();
             foreach (Student s in studentList)
                 listBox1.Items.Add(s.ToString());
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            StudentBussiness sb = new StudentBussiness();
+            Student insertStudent = new Student(99, textBox1.Text, textBox2.Text, Convert.ToDecimal(textBox3.Text));
+            bool result = sb.InsertStudent(insertStudent);
+            if (result)
+                MessageBox.Show("Uspesan unos");
+            else
+                MessageBox.Show("Neuspesan unos");
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            listBox1.Items.Clear();
+
+            StudentBussiness sb = new StudentBussiness();
+            List<Student> studentList = sb.GetStudents();
+            foreach (Student s in studentList)
+                listBox1.Items.Add(s.ToString());
         }
     }
 }
